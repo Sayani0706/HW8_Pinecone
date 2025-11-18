@@ -1,0 +1,26 @@
+[2025-11-18T06:54:26.595+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-18T06:54:26.599+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.download_csv manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:54:26.601+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.download_csv manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:54:26.601+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-18T06:54:26.605+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): download_csv> on 2025-11-18 06:54:26.123289+00:00
+[2025-11-18T06:54:26.608+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'medium_articles_to_pinecone', 'download_csv', 'manual__2025-11-18T06:54:26.123289+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/medium_pinecone.py', '--cfg-path', '/tmp/tmpxp5zp2nf']
+[2025-11-18T06:54:26.610+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask download_csv
+[2025-11-18T06:54:26.609+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1223) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-18T06:54:26.610+0000] {standard_task_runner.py:72} INFO - Started process 1225 to run task
+[2025-11-18T06:54:26.624+0000] {task_command.py:467} INFO - Running <TaskInstance: medium_articles_to_pinecone.download_csv manual__2025-11-18T06:54:26.123289+00:00 [running]> on host bc897b700767
+[2025-11-18T06:54:26.649+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='medium_articles_to_pinecone' AIRFLOW_CTX_TASK_ID='download_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T06:54:26.123289+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-18T06:54:26.123289+00:00'
+[2025-11-18T06:54:26.650+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-18T06:54:26.655+0000] {logging_mixin.py:190} INFO - [download] url=https://s3-geospatial.s3.us-west-2.amazonaws.com/medium_data.csv
+[2025-11-18T06:54:26.655+0000] {logging_mixin.py:190} INFO - [download] to  =/opt/***/data/medium_data.csv
+[2025-11-18T06:54:27.097+0000] {logging_mixin.py:190} INFO - [download] rows=2498 size_bytes=599580
+[2025-11-18T06:54:27.098+0000] {logging_mixin.py:190} INFO - [download] head(3):
+[2025-11-18T06:54:27.101+0000] {logging_mixin.py:190} INFO -  id                                                                                                   url                                                            title                                              subtitle  claps  responses  reading_time          publication       date
+  1   https://towardsdatascience.com/not-all-rainbows-and-sunshine-the-darker-side-of-chatgpt-75917472b9c        Not All Rainbows and Sunshine: The Darker Side of ChatGPT                 Part 1: The Risks and Ethical Issues…  453.0         11             9 Towards Data Science 27-01-2023
+  2  https://towardsdatascience.com/ethics-in-ai-potential-root-causes-for-biased-algorithms-890091915aa3        Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in data  311.0          3            12 Towards Data Science 27-01-2023
+  3 https://towardsdatascience.com/python-tuple-the-whole-truth-and-only-truth-lets-dig-deep-24d2bf02971b Python Tuple, The Whole Truth and Only the Truth: Let’s Dig Deep                                                   NaN  188.0          0            24 Towards Data Science 27-01-2023
+[2025-11-18T06:54:27.102+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-11-18T06:54:27.108+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-18T06:54:27.109+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=medium_articles_to_pinecone, task_id=download_csv, run_id=manual__2025-11-18T06:54:26.123289+00:00, execution_date=20251118T065426, start_date=20251118T065426, end_date=20251118T065427
+[2025-11-18T06:54:27.138+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-18T06:54:27.152+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-18T06:54:27.153+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

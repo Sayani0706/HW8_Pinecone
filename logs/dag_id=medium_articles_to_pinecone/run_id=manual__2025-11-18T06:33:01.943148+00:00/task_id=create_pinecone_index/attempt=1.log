@@ -1,0 +1,202 @@
+[2025-11-18T06:33:05.145+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-18T06:33:05.149+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.create_pinecone_index manual__2025-11-18T06:33:01.943148+00:00 [queued]>
+[2025-11-18T06:33:05.151+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.create_pinecone_index manual__2025-11-18T06:33:01.943148+00:00 [queued]>
+[2025-11-18T06:33:05.151+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-18T06:33:05.155+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): create_pinecone_index> on 2025-11-18 06:33:01.943148+00:00
+[2025-11-18T06:33:05.158+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=594) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-18T06:33:05.158+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'medium_articles_to_pinecone', 'create_pinecone_index', 'manual__2025-11-18T06:33:01.943148+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/medium_pinecone.py', '--cfg-path', '/tmp/tmppwz2ml63']
+[2025-11-18T06:33:05.159+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask create_pinecone_index
+[2025-11-18T06:33:05.159+0000] {standard_task_runner.py:72} INFO - Started process 596 to run task
+[2025-11-18T06:33:05.172+0000] {task_command.py:467} INFO - Running <TaskInstance: medium_articles_to_pinecone.create_pinecone_index manual__2025-11-18T06:33:01.943148+00:00 [running]> on host bc897b700767
+[2025-11-18T06:33:05.193+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='medium_articles_to_pinecone' AIRFLOW_CTX_TASK_ID='create_pinecone_index' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T06:33:01.943148+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-18T06:33:01.943148+00:00'
+[2025-11-18T06:33:05.193+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-18T06:33:05.211+0000] {discover_namespace_packages.py:12} INFO - Discovering subpackages in _NamespacePath(['/home/***/.local/lib/python3.12/site-packages/pinecone_plugins'])
+[2025-11-18T06:33:05.212+0000] {discover_plugins.py:9} INFO - Looking for plugins in pinecone_plugins.inference
+[2025-11-18T06:33:05.214+0000] {installation.py:10} INFO - Installing plugin inference into Pinecone
+[2025-11-18T06:33:05.301+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/medium_pinecone.py", line 63, in _create_index
+    existing = [ix["name"] for ix in pc.list_indexes()]
+                                     ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/control/pinecone.py", line 506, in list_indexes
+    response = self.index_api.list_indexes()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 761, in __call__
+    return self.callable(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/control/api/manage_indexes_api.py", line 792, in __list_indexes
+    return self.call_with_http_info(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 819, in call_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 380, in call_api
+    return self.__call_api(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 175, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 434, in request
+    return self.rest_client.GET(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/rest.py", line 284, in GET
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/rest.py", line 245, in request
+    r = self.pool_manager.request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/_request_methods.py", line 136, in request
+    return self.request_encode_url(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/_request_methods.py", line 183, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 397, in request
+    self.putheader(header, value)
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 311, in putheader
+    super().putheader(header, *values)
+  File "/usr/local/lib/python3.12/http/client.py", line 1309, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2028' in position 75: ordinal not in range(256)
+[2025-11-18T06:33:05.305+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=medium_articles_to_pinecone, task_id=create_pinecone_index, run_id=manual__2025-11-18T06:33:01.943148+00:00, execution_date=20251118T063301, start_date=20251118T063305, end_date=20251118T063305
+[2025-11-18T06:33:05.309+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-18T06:33:05.309+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 7 for task create_pinecone_index ('latin-1' codec can't encode character '\u2028' in position 75: ordinal not in range(256); 596)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/medium_pinecone.py", line 63, in _create_index
+    existing = [ix["name"] for ix in pc.list_indexes()]
+                                     ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/control/pinecone.py", line 506, in list_indexes
+    response = self.index_api.list_indexes()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 761, in __call__
+    return self.callable(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/control/api/manage_indexes_api.py", line 792, in __list_indexes
+    return self.call_with_http_info(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 819, in call_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 380, in call_api
+    return self.__call_api(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 175, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/api_client.py", line 434, in request
+    return self.rest_client.GET(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/rest.py", line 284, in GET
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pinecone/core/openapi/shared/rest.py", line 245, in request
+    r = self.pool_manager.request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/_request_methods.py", line 136, in request
+    return self.request_encode_url(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/_request_methods.py", line 183, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 397, in request
+    self.putheader(header, value)
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 311, in putheader
+    super().putheader(header, *values)
+  File "/usr/local/lib/python3.12/http/client.py", line 1309, in putheader
+    values[i] = one_value.encode('latin-1')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2028' in position 75: ordinal not in range(256)
+[2025-11-18T06:33:05.341+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-11-18T06:33:05.349+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-18T06:33:05.350+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

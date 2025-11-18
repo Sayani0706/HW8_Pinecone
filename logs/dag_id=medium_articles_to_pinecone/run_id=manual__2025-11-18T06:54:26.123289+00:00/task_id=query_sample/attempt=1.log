@@ -1,0 +1,36 @@
+[2025-11-18T06:55:03.597+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-18T06:55:03.601+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:55:03.604+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:55:03.604+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-18T06:55:03.607+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): query_sample> on 2025-11-18 06:54:26.123289+00:00
+[2025-11-18T06:55:03.610+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'medium_articles_to_pinecone', 'query_sample', 'manual__2025-11-18T06:54:26.123289+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/medium_pinecone.py', '--cfg-path', '/tmp/tmp91tw8si1']
+[2025-11-18T06:55:03.611+0000] {standard_task_runner.py:105} INFO - Job 18: Subtask query_sample
+[2025-11-18T06:55:03.611+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1310) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-18T06:55:03.612+0000] {standard_task_runner.py:72} INFO - Started process 1312 to run task
+[2025-11-18T06:55:03.624+0000] {task_command.py:467} INFO - Running <TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-18T06:54:26.123289+00:00 [running]> on host bc897b700767
+[2025-11-18T06:55:03.647+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='medium_articles_to_pinecone' AIRFLOW_CTX_TASK_ID='query_sample' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T06:54:26.123289+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-18T06:54:26.123289+00:00'
+[2025-11-18T06:55:03.648+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-18T06:55:05.163+0000] {discover_namespace_packages.py:12} INFO - Discovering subpackages in _NamespacePath(['/home/***/.local/lib/python3.12/site-packages/pinecone_plugins'])
+[2025-11-18T06:55:05.163+0000] {discover_plugins.py:9} INFO - Looking for plugins in pinecone_plugins.inference
+[2025-11-18T06:55:05.166+0000] {installation.py:10} INFO - Installing plugin inference into Pinecone
+[2025-11-18T06:55:05.342+0000] {SentenceTransformer.py:113} INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2025-11-18T06:55:06.563+0000] {SentenceTransformer.py:219} INFO - Use pytorch device_name: cpu
+[2025-11-18T06:55:06.567+0000] {logging_mixin.py:190} WARNING - Batches:   0%|          | 0/1 [00:00<?, ?it/s]
+[2025-11-18T06:55:06.582+0000] {logging_mixin.py:190} WARNING - Batches: 100%|##########| 1/1 [00:00<00:00, 69.98it/s]
+[2025-11-18T06:55:06.582+0000] {logging_mixin.py:190} INFO - [query] what is ethics in AI
+[2025-11-18T06:55:07.001+0000] {logging_mixin.py:190} INFO - 01. score=0.7407 id=1635 title=Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in data
+[2025-11-18T06:55:07.001+0000] {logging_mixin.py:190} INFO - 02. score=0.7407 id=2 title=Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in data
+[2025-11-18T06:55:07.002+0000] {logging_mixin.py:190} INFO - 03. score=0.7169 id=1327 title=The ethical implications of AI in design It’s time to talk ethics, chatGPT, Midjourney & more.
+[2025-11-18T06:55:07.002+0000] {logging_mixin.py:190} INFO - 04. score=0.6671 id=662 title=Ethical Considerations In Machine Learning Projects Don’t forget these topics when building AI systems
+[2025-11-18T06:55:07.002+0000] {logging_mixin.py:190} INFO - 05. score=0.6519 id=2030 title=Navigating the Ethical Contours of AI Copy Generators Like ChatGPT Be prepared to cite the AI…
+[2025-11-18T06:55:07.003+0000] {logging_mixin.py:190} INFO - 06. score=0.6519 id=1628 title=Navigating the Ethical Contours of AI Copy Generators Like ChatGPT Be prepared to cite the AI…
+[2025-11-18T06:55:07.003+0000] {logging_mixin.py:190} INFO - 07. score=0.6072 id=1345 title=Using AI in UX research: a structured and ethical approach A structured approach for assessing the…
+[2025-11-18T06:55:07.003+0000] {logging_mixin.py:190} INFO - 08. score=0.5962 id=1831 title=The Path towards AI Regulation The contribution of the AI Act its impact
+[2025-11-18T06:55:07.003+0000] {logging_mixin.py:190} INFO - 09. score=0.5962 id=370 title=The Path towards AI Regulation The contribution of the AI Act its impact
+[2025-11-18T06:55:07.003+0000] {logging_mixin.py:190} INFO - 10. score=0.5776 id=1802 title=Implementing AI is like buying and driving a car (but different) An analogy to help explain common…
+[2025-11-18T06:55:07.016+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-11-18T06:55:07.023+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-18T06:55:07.024+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=medium_articles_to_pinecone, task_id=query_sample, run_id=manual__2025-11-18T06:54:26.123289+00:00, execution_date=20251118T065426, start_date=20251118T065503, end_date=20251118T065507
+[2025-11-18T06:55:07.085+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-18T06:55:07.093+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-18T06:55:07.094+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

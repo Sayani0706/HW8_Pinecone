@@ -1,0 +1,26 @@
+[2025-11-18T06:54:28.883+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-18T06:54:28.887+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.prepare_input manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:54:28.890+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.prepare_input manual__2025-11-18T06:54:26.123289+00:00 [queued]>
+[2025-11-18T06:54:28.890+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-18T06:54:28.893+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): prepare_input> on 2025-11-18 06:54:26.123289+00:00
+[2025-11-18T06:54:28.896+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'medium_articles_to_pinecone', 'prepare_input', 'manual__2025-11-18T06:54:26.123289+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/medium_pinecone.py', '--cfg-path', '/tmp/tmpl304yhy7']
+[2025-11-18T06:54:28.897+0000] {standard_task_runner.py:105} INFO - Job 15: Subtask prepare_input
+[2025-11-18T06:54:28.897+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1234) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-18T06:54:28.898+0000] {standard_task_runner.py:72} INFO - Started process 1236 to run task
+[2025-11-18T06:54:28.910+0000] {task_command.py:467} INFO - Running <TaskInstance: medium_articles_to_pinecone.prepare_input manual__2025-11-18T06:54:26.123289+00:00 [running]> on host bc897b700767
+[2025-11-18T06:54:28.933+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='medium_articles_to_pinecone' AIRFLOW_CTX_TASK_ID='prepare_input' AIRFLOW_CTX_EXECUTION_DATE='2025-11-18T06:54:26.123289+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-18T06:54:26.123289+00:00'
+[2025-11-18T06:54:28.933+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-18T06:54:28.989+0000] {logging_mixin.py:190} INFO - [input] wrote 2498 records → /opt/***/data/pinecone_input.jsonl
+[2025-11-18T06:54:28.989+0000] {logging_mixin.py:190} INFO - [input] sample 1: {"id": "1", "text": "Not All Rainbows and Sunshine: The Darker Side of\u00a0ChatGPT Part 1: The Risks and Ethical\u00a0Issues\u2026", "metadata": {"title": "Not All Rainbows and Sunshine: The Darker Side of\u00a0ChatGPT Part 1: The Risks and Ethical\u00a0Issues\u2026"}}
+[2025-11-18T06:54:28.989+0000] {logging_mixin.py:190} INFO - [input] sample 2: {"id": "2", "text": "Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in\u00a0data", "metadata": {"title": "Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in\u00a0data"}}
+[2025-11-18T06:54:28.989+0000] {logging_mixin.py:190} INFO - [input] sample 3: {"id": "3", "text": "Python Tuple, The Whole Truth and Only the Truth: Let\u2019s Dig\u00a0Deep nan", "metadata": {"title": "Python Tuple, The Whole Truth and Only the Truth: Let\u2019s Dig\u00a0Deep nan"}}
+[2025-11-18T06:54:28.989+0000] {logging_mixin.py:190} INFO - [input] data folder listing:
+[2025-11-18T06:54:28.990+0000] {logging_mixin.py:190} INFO -   - medium_data.csv 599580 bytes
+[2025-11-18T06:54:28.990+0000] {logging_mixin.py:190} INFO -   - medium_preprocessed.parquet 394855 bytes
+[2025-11-18T06:54:28.990+0000] {logging_mixin.py:190} INFO -   - pinecone_input.jsonl 674557 bytes
+[2025-11-18T06:54:28.990+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-11-18T06:54:28.993+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-18T06:54:28.993+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=medium_articles_to_pinecone, task_id=prepare_input, run_id=manual__2025-11-18T06:54:26.123289+00:00, execution_date=20251118T065426, start_date=20251118T065428, end_date=20251118T065428
+[2025-11-18T06:54:29.041+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-18T06:54:29.050+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-18T06:54:29.051+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

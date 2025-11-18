@@ -1,0 +1,143 @@
+[2025-11-10T21:37:40.360+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-10T21:37:40.364+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-10T21:36:55.148756+00:00 [queued]>
+[2025-11-10T21:37:40.366+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-10T21:36:55.148756+00:00 [queued]>
+[2025-11-10T21:37:40.367+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-10T21:37:40.370+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): query_sample> on 2025-11-10 21:36:55.148756+00:00
+[2025-11-10T21:37:40.373+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'medium_articles_to_pinecone', 'query_sample', 'manual__2025-11-10T21:36:55.148756+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/medium_pinecone.py', '--cfg-path', '/tmp/tmp58hh770f']
+[2025-11-10T21:37:40.375+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask query_sample
+[2025-11-10T21:37:40.375+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=676) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-10T21:37:40.376+0000] {standard_task_runner.py:72} INFO - Started process 678 to run task
+[2025-11-10T21:37:40.389+0000] {task_command.py:467} INFO - Running <TaskInstance: medium_articles_to_pinecone.query_sample manual__2025-11-10T21:36:55.148756+00:00 [running]> on host 67eea294b33e
+[2025-11-10T21:37:40.408+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='medium_articles_to_pinecone' AIRFLOW_CTX_TASK_ID='query_sample' AIRFLOW_CTX_EXECUTION_DATE='2025-11-10T21:36:55.148756+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-10T21:36:55.148756+00:00'
+[2025-11-10T21:37:40.409+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-10T21:37:41.957+0000] {discover_namespace_packages.py:12} INFO - Discovering subpackages in _NamespacePath(['/home/***/.local/lib/python3.12/site-packages/pinecone_plugins'])
+[2025-11-10T21:37:41.957+0000] {discover_plugins.py:9} INFO - Looking for plugins in pinecone_plugins.inference
+[2025-11-10T21:37:41.960+0000] {installation.py:10} INFO - Installing plugin inference into Pinecone
+[2025-11-10T21:37:44.354+0000] {SentenceTransformer.py:113} INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2025-11-10T21:37:45.628+0000] {SentenceTransformer.py:219} INFO - Use pytorch device_name: cpu
+[2025-11-10T21:37:45.633+0000] {logging_mixin.py:190} WARNING - Batches:   0%|          | 0/1 [00:00<?, ?it/s]
+[2025-11-10T21:37:45.666+0000] {logging_mixin.py:190} WARNING - Batches: 100%|##########| 1/1 [00:00<00:00, 31.83it/s]
+[2025-11-10T21:37:45.666+0000] {logging_mixin.py:190} INFO - Running query: what is ethics in AI
+[2025-11-10T21:37:46.261+0000] {logging_mixin.py:190} INFO - 01. score=0.7407  id=2  title=Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in data
+[2025-11-10T21:37:46.262+0000] {logging_mixin.py:190} INFO - 02. score=0.7407  id=1635  title=Ethics in AI: Potential Root Causes for Biased Algorithms An alternative approach to understanding bias in data
+[2025-11-10T21:37:46.262+0000] {logging_mixin.py:190} INFO - 03. score=0.7169  id=1327  title=The ethical implications of AI in design It’s time to talk ethics, chatGPT, Midjourney & more.
+[2025-11-10T21:37:46.262+0000] {logging_mixin.py:190} INFO - 04. score=0.6671  id=662  title=Ethical Considerations In Machine Learning Projects Don’t forget these topics when building AI systems
+[2025-11-10T21:37:46.262+0000] {logging_mixin.py:190} INFO - 05. score=0.6519  id=2030  title=Navigating the Ethical Contours of AI Copy Generators Like ChatGPT Be prepared to cite the AI…
+[2025-11-10T21:37:46.263+0000] {logging_mixin.py:190} INFO - 06. score=0.6519  id=1628  title=Navigating the Ethical Contours of AI Copy Generators Like ChatGPT Be prepared to cite the AI…
+[2025-11-10T21:37:46.263+0000] {logging_mixin.py:190} INFO - 07. score=0.6072  id=1345  title=Using AI in UX research: a structured and ethical approach A structured approach for assessing the…
+[2025-11-10T21:37:46.263+0000] {logging_mixin.py:190} INFO - 08. score=0.5962  id=1831  title=The Path towards AI Regulation The contribution of the AI Act its impact
+[2025-11-10T21:37:46.263+0000] {logging_mixin.py:190} INFO - 09. score=0.5962  id=370  title=The Path towards AI Regulation The contribution of the AI Act its impact
+[2025-11-10T21:37:46.263+0000] {logging_mixin.py:190} INFO - 10. score=0.5776  id=1802  title=Implementing AI is like buying and driving a car (but different) An analogy to help explain common…
+[2025-11-10T21:37:46.264+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/medium_pinecone.py", line 132, in _query_example
+    print("Raw JSON:", json.dumps(xc, indent=2)[:1500], "...")
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QueryResponse is not JSON serializable
+[2025-11-10T21:37:46.269+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=medium_articles_to_pinecone, task_id=query_sample, run_id=manual__2025-11-10T21:36:55.148756+00:00, execution_date=20251110T213655, start_date=20251110T213740, end_date=20251110T213746
+[2025-11-10T21:37:46.275+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-10T21:37:46.275+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 7 for task query_sample (Object of type QueryResponse is not JSON serializable; 678)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/medium_pinecone.py", line 132, in _query_example
+    print("Raw JSON:", json.dumps(xc, indent=2)[:1500], "...")
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QueryResponse is not JSON serializable
+[2025-11-10T21:37:46.312+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-11-10T21:37:46.320+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-10T21:37:46.321+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
